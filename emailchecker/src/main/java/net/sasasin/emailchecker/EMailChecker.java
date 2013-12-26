@@ -44,6 +44,7 @@ public class EMailChecker {
 				String mailServer = i.getAdditionalName().toString();
 
 				client.connect(mailServer);
+				client.helo(hostname);
 				client.setSender(emailAddress);
 
 				return client.addRecipient(emailAddress);
